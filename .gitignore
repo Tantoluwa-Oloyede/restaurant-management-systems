@@ -1,0 +1,7 @@
+# Dependencies
+node_modules/
+
+# Local Environment Secrets
+.env
+.vscode
+/src/generated/prisma

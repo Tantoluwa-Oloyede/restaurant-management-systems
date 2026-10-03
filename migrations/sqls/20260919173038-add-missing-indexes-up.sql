@@ -1,0 +1,11 @@
+CREATE INDEX IF NOT EXISTS idx_order_items_order ON order_items(order_id);
+CREATE INDEX IF NOT EXISTS idx_order_items_menu_item ON order_items(menu_item_id);
+CREATE INDEX IF NOT EXISTS idx_order_events_order ON order_events(order_id, created_at);
+CREATE INDEX IF NOT EXISTS idx_menu_item_ingredients_inventory ON menu_item_ingredients(inventory_id);
+CREATE INDEX IF NOT EXISTS idx_otps_user_purpose ON otps(user_id, purpose);
+CREATE INDEX IF NOT EXISTS idx_orders_waiter ON orders(waiter_id);
+CREATE INDEX IF NOT EXISTS idx_orders_kitchen_staff ON orders(kitchen_staff_id);
+CREATE INDEX IF NOT EXISTS idx_orders_paid_at ON orders(paid_at) WHERE status = 'PAID';
+CREATE INDEX IF NOT EXISTS idx_audit_entity ON system_audit_logs(entity_type, entity_id);
+CREATE INDEX IF NOT EXISTS idx_audit_user ON system_audit_logs(user_id);
+CREATE INDEX IF NOT EXISTS idx_idempotency_expires ON order_idempotency_keys(expires_at);

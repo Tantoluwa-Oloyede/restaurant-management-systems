@@ -1,0 +1,1 @@
+ALTER TABLE otps ADD COLUMN is_used BOOLEAN DEFAULT false;

@@ -1,0 +1,1 @@
+ALTER TABLE otps DROP COLUMN IF EXISTS is_used;
